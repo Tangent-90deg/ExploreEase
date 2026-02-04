@@ -1,21 +1,60 @@
 <!DOCTYPE html>
-<html>
-<head><title>Manali</title><link rel="stylesheet" href="css/style.css"></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manali | ExploreEase</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
 <body>
-<header>
+
+<header class="navbar">
+  <h2 class="logo">ExploreEase</h2>
+
+  <input type="checkbox" id="menu-toggle">
+  <label for="menu-toggle" class="menu-icon">☰</label>
+
   <nav>
     <a href="index.html">Home</a>
     <a href="destinations.html">Destinations</a>
     <a href="packages.html">Packages</a>
     <a href="blog.html">Blog</a>
-    <a href="performance.html">Performance</a>
     <a href="contact.html">Contact</a>
+    <button id="darkBtn">🌙</button>
   </nav>
 </header>
-<main>
-<h1>Manali</h1>
-<p>Hill station with snow adventures.</p>
-</main>
-<footer>© ExploreEase</footer>
+
+<section class="hero" style="background-image:url('images/manali.jpg'); height:60vh">
+  <div class="hero-text">
+    <h1>Manali</h1>
+    <p>Snow, mountains, and adventure</p>
+  </div>
+</section>
+
+<section class="section">
+  <h2>About Manali</h2>
+  <p style="max-width:800px;margin:auto">
+    Manali is a beautiful hill station in Himachal Pradesh, famous for its
+    snow-capped mountains, scenic valleys, and adventure sports.
+  </p>
+</section>
+
+<section class="section alt">
+  <h2>Things to Do</h2>
+  <ul style="list-style:none;max-width:600px;margin:auto">
+    <li>🏔 Trekking & hiking</li>
+    <li>❄ Snow activities</li>
+    <li>🚵 Adventure sports</li>
+    <li>🔥 Bonfire & camping</li>
+  </ul>
+</section>
+
+<footer>
+  <p>© 2026 ExploreEase</p>
+</footer>
+
+<script src="js/script.js"></script>
 </body>
 </html>

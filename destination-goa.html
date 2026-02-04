@@ -1,23 +1,67 @@
 <!DOCTYPE html>
-<html>
-<head><title>Goa</title><link rel="stylesheet" href="css/style.css"></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Goa | ExploreEase</title>
+
+  <!-- CORRECT CSS PATH -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
 <body>
-<header>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <h2 class="logo">ExploreEase</h2>
+
+  <input type="checkbox" id="menu-toggle">
+  <label for="menu-toggle" class="menu-icon">☰</label>
+
   <nav>
     <a href="index.html">Home</a>
     <a href="destinations.html">Destinations</a>
     <a href="packages.html">Packages</a>
     <a href="blog.html">Blog</a>
-    <a href="performance.html">Performance</a>
     <a href="contact.html">Contact</a>
+    <button id="darkBtn">🌙</button>
   </nav>
 </header>
 
-<main>
-<h1>Goa</h1>
-<p>Famous for beaches and nightlife.</p>
-<img src="images/goa.webp" loading="lazy">
-</main>
-<footer>© ExploreEase</footer>
+<!-- HERO IMAGE -->
+<section class="hero" style="background-image:url('images/goa.jpg'); height:60vh">
+  <div class="hero-text">
+    <h1>Goa</h1>
+    <p>Famous for beaches and nightlife</p>
+  </div>
+</section>
+
+<!-- CONTENT -->
+<section class="section">
+  <h2>About Goa</h2>
+  <p style="max-width:800px;margin:auto">
+    Goa is one of India’s most popular tourist destinations, known for its
+    stunning beaches, vibrant nightlife, Portuguese heritage, and relaxed vibe.
+  </p>
+</section>
+
+<section class="section alt">
+  <h2>Things to Do</h2>
+  <ul style="list-style:none;max-width:600px;margin:auto">
+    <li>🏖 Beach hopping</li>
+    <li>🎉 Nightlife & clubs</li>
+    <li>⛪ Portuguese architecture</li>
+    <li>🍤 Seafood & local cuisine</li>
+  </ul>
+</section>
+
+<footer>
+  <p>© 2026 ExploreEase</p>
+</footer>
+
+<!-- CORRECT JS PATH -->
+<script src="js/script.js"></script>
 </body>
 </html>
