@@ -3,105 +3,370 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ExploreEase</title>
+  <title>ExploreEase - Premium Travel Experiences | Official Website</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Discover premium travel experiences with ExploreEase. Official travel agency offering curated destinations, luxury packages, and unforgettable adventures worldwide.">
+  <meta name="keywords" content="travel, tourism, vacation, destinations, luxury travel, travel agency, holiday packages">
+  <meta name="author" content="ExploreEase Travel">
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="ExploreEase - Premium Travel Experiences">
+  <meta property="og:description" content="Discover the world with confidence through our premium curated travel experiences">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://exploreease.com">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✈️</text></svg>">
 
   <!-- CSS (IMPORTANT PATH) -->
   <link rel="stylesheet" href="css/style.css">
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
 <!-- NAVBAR -->
 <header class="navbar">
-  <h2 class="logo">ExploreEase</h2>
+  <h2 class="logo">
+    <i class="fas fa-plane"></i>
+    ExploreEase
+  </h2>
 
   <input type="checkbox" id="menu-toggle">
-  <label for="menu-toggle" class="menu-icon">☰</label>
+  <label for="menu-toggle" class="menu-icon">
+    <i class="fas fa-bars"></i>
+  </label>
 
   <nav>
-    <a href="index.html">Home</a>
-    <a href="destinations.html">Destinations</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="contact.html">Contact</a>
-    <button id="darkBtn">🌙</button>
+    <a href="index.html"><i class="fas fa-home"></i> Home</a>
+    <a href="destinations.html"><i class="fas fa-map-marked-alt"></i> Destinations</a>
+    <a href="packages.html"><i class="fas fa-suitcase"></i> Packages</a>
+    <a href="gallery.html"><i class="fas fa-images"></i> Gallery</a>
+    <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+    <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+    <button id="darkBtn"><i class="fas fa-moon"></i></button>
   </nav>
 </header>
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-text">
-    <h1>Discover the World<br>With Confidence</h1>
-    <p>Premium curated travel experiences</p>
-    <a href="destinations.html" class="btn">Explore Now</a>
+    <h1>Discover the World<br><span class="highlight">With Confidence</span></h1>
+    <p>Premium curated travel experiences crafted for the modern explorer. Your journey to extraordinary destinations starts here.</p>
+    <div class="hero-buttons">
+      <a href="destinations.html" class="btn primary">
+        <i class="fas fa-compass"></i> Explore Destinations
+      </a>
+      <a href="packages.html" class="btn secondary">
+        <i class="fas fa-gift"></i> View Packages
+      </a>
+    </div>
+  </div>
+  
+  <!-- Scroll Indicator -->
+  <div class="scroll-indicator">
+    <i class="fas fa-chevron-down"></i>
+  </div>
+</section>
+
+<!-- FEATURES SECTION -->
+<section class="section features">
+  <div class="container">
+    <h2>Why Choose ExploreEase?</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-shield-alt"></i>
+        </div>
+        <h3>Safe & Secure</h3>
+        <p>24/7 support and comprehensive travel insurance for peace of mind</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-star"></i>
+        </div>
+        <h3>Premium Quality</h3>
+        <p>Handpicked accommodations and experiences that exceed expectations</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-users"></i>
+        </div>
+        <h3>Expert Guides</h3>
+        <p>Local experts who bring destinations to life with insider knowledge</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-dollar-sign"></i>
+        </div>
+        <h3>Best Value</h3>
+        <p>Competitive pricing with no hidden fees and flexible payment options</p>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- DESTINATIONS -->
 <section class="section">
-  <h2>Top Destinations</h2>
+  <div class="container">
+    <h2>Top Destinations</h2>
+    <p class="section-subtitle">Explore our most popular travel destinations, carefully selected for unforgettable experiences</p>
 
-  <div class="cards">
-    <div class="card">
-      <img src="images/goa.jpg">
-      <div class="card-info">Goa</div>
+    <div class="cards">
+      <div class="card" onclick="window.location.href='destination-goa.html'">
+        <img src="images/goa.webp" alt="Goa Beach Paradise" loading="lazy">
+        <div class="card-overlay">
+          <div class="card-info">
+            <h3>Goa</h3>
+            <p>Beach Paradise</p>
+            <div class="card-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <span>4.8</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" onclick="window.location.href='destination-manali.html'">
+        <img src="images/manali.webp" alt="Manali Mountain Adventure" loading="lazy">
+        <div class="card-overlay">
+          <div class="card-info">
+            <h3>Manali</h3>
+            <p>Mountain Adventure</p>
+            <div class="card-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <span>4.9</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/paris.jpg" alt="Paris City of Love" loading="lazy">
+        <div class="card-overlay">
+          <div class="card-info">
+            <h3>Paris</h3>
+            <p>City of Love</p>
+            <div class="card-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <span>4.7</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/bali.jpg" alt="Bali Tropical Paradise" loading="lazy">
+        <div class="card-overlay">
+          <div class="card-info">
+            <h3>Bali</h3>
+            <p>Tropical Paradise</p>
+            <div class="card-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <span>4.8</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <div class="card">
-      <img src="images/manali.jpg">
-      <div class="card-info">Manali</div>
+    
+    <div class="text-center" style="margin-top: 3rem;">
+      <a href="destinations.html" class="btn primary">
+        <i class="fas fa-globe"></i> View All Destinations
+      </a>
     </div>
+  </div>
+</section>
 
-    <div class="card">
-      <img src="images/paris.jpg">
-      <div class="card-info">Paris</div>
-    </div>
-
-    <div class="card">
-      <img src="images/bali.jpg">
-      <div class="card-info">Bali</div>
+<!-- STATS SECTION -->
+<section class="section stats-section">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-number">50K+</div>
+        <div class="stat-label">Happy Travelers</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">200+</div>
+        <div class="stat-label">Destinations</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">15+</div>
+        <div class="stat-label">Years Experience</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">98%</div>
+        <div class="stat-label">Satisfaction Rate</div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- GALLERY -->
 <section class="section alt">
-  <h2>Travel Gallery</h2>
+  <div class="container">
+    <h2>Travel Gallery</h2>
+    <p class="section-subtitle">Moments captured from our travelers' incredible journeys around the world</p>
 
-  <div class="gallery">
-    <img src="images/gallery1.jpg" onclick="openImg(this.src)">
-    <img src="images/gallery2.jpg" onclick="openImg(this.src)">
-    <img src="images/gallery3.jpg" onclick="openImg(this.src)">
+    <div class="gallery">
+      <img src="images/gallery1.webp" alt="Travel Memory 1" onclick="openImg(this.src)" loading="lazy">
+      <img src="images/gallery2.webp" alt="Travel Memory 2" onclick="openImg(this.src)" loading="lazy">
+      <img src="images/gallery3.jpg" alt="Travel Memory 3" onclick="openImg(this.src)" loading="lazy">
+    </div>
+    
+    <div class="text-center" style="margin-top: 2rem;">
+      <a href="gallery.html" class="btn secondary">
+        <i class="fas fa-camera"></i> View Full Gallery
+      </a>
+    </div>
   </div>
 </section>
 
 <!-- LIGHTBOX -->
 <div id="lightbox" onclick="this.style.display='none'">
-  <img id="lightbox-img">
+  <span class="close-lightbox">&times;</span>
+  <img id="lightbox-img" alt="Gallery Image">
 </div>
 
 <!-- REVIEWS -->
 <section class="section">
-  <h2>Traveler Reviews</h2>
+  <div class="container">
+    <h2>What Our Travelers Say</h2>
+    <p class="section-subtitle">Real experiences from real travelers who chose ExploreEase for their adventures</p>
 
-  <div class="reviews">
-    <div class="review">
-      <img src="images/user1.jpg">
-      <p>“Best experience ever!”</p>
-      ⭐⭐⭐⭐⭐
+    <div class="reviews">
+      <div class="review">
+        <div class="review-header">
+          <img src="images/user1.jpg" alt="Sarah Johnson">
+          <div class="reviewer-info">
+            <h4>Sarah Johnson</h4>
+            <p>Travel Enthusiast</p>
+          </div>
+        </div>
+        <div class="review-rating">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <p>"ExploreEase made our Bali trip absolutely magical! The attention to detail and personalized service exceeded all our expectations. Highly recommended!"</p>
+      </div>
+
+      <div class="review">
+        <div class="review-header">
+          <img src="images/user2.avif" alt="Michael Chen">
+          <div class="reviewer-info">
+            <h4>Michael Chen</h4>
+            <p>Adventure Seeker</p>
+          </div>
+        </div>
+        <div class="review-rating">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <p>"Professional service from start to finish. The Manali adventure package was perfectly organized, and our guide was incredibly knowledgeable. Will definitely book again!"</p>
+      </div>
     </div>
+    
+    <div class="text-center" style="margin-top: 2rem;">
+      <a href="reviews.html" class="btn secondary">
+        <i class="fas fa-comments"></i> Read More Reviews
+      </a>
+    </div>
+  </div>
+</section>
 
-    <div class="review">
-      <img src="images/user2.jpg">
-      <p>“Very professional service.”</p>
-      ⭐⭐⭐⭐⭐
+<!-- CTA SECTION -->
+<section class="section cta-section">
+  <div class="container">
+    <div class="cta-content">
+      <h2>Ready for Your Next Adventure?</h2>
+      <p>Join thousands of satisfied travelers and create memories that last a lifetime</p>
+      <div class="cta-buttons">
+        <a href="booking.html" class="btn primary large">
+          <i class="fas fa-calendar-check"></i> Book Now
+        </a>
+        <a href="contact.html" class="btn secondary large">
+          <i class="fas fa-phone"></i> Get Quote
+        </a>
+      </div>
     </div>
   </div>
 </section>
 
 <footer>
-  <p>© 2026 ExploreEase</p>
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3><i class="fas fa-plane"></i> ExploreEase</h3>
+        <p>Your trusted partner for premium travel experiences worldwide. Creating unforgettable journeys since 2009.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="destinations.html">Destinations</a></li>
+          <li><a href="packages.html">Packages</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="terms.html">Terms & Conditions</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="#">24/7 Support</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h4>Contact Info</h4>
+        <div class="contact-info">
+          <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+          <p><i class="fas fa-envelope"></i> info@exploreease.com</p>
+          <p><i class="fas fa-map-marker-alt"></i> 123 Travel Street, Adventure City</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2026 ExploreEase. All rights reserved. | Designed with ❤️ for travelers</p>
+    </div>
+  </div>
 </footer>
 
 <!-- JS (IMPORTANT PATH) -->

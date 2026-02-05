@@ -3,72 +3,324 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Destinations | ExploreEase</title>
+  <title>Destinations - Explore Amazing Places | ExploreEase</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Discover amazing travel destinations with ExploreEase. From tropical beaches to mountain adventures, find your perfect getaway.">
+  <meta name="keywords" content="travel destinations, vacation spots, Goa, Manali, Jaipur, travel packages">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✈️</text></svg>">
 
-  <!-- CORRECT CSS PATH -->
+  <!-- CSS -->
   <link rel="stylesheet" href="css/style.css">
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-<!-- NAVBAR (same as home) -->
+<!-- NAVBAR -->
 <header class="navbar">
-  <h2 class="logo">ExploreEase</h2>
+  <h2 class="logo">
+    <i class="fas fa-plane"></i>
+    ExploreEase
+  </h2>
 
   <input type="checkbox" id="menu-toggle">
-  <label for="menu-toggle" class="menu-icon">☰</label>
+  <label for="menu-toggle" class="menu-icon">
+    <i class="fas fa-bars"></i>
+  </label>
 
   <nav>
-    <a href="index.html">Home</a>
-    <a href="destinations.html">Destinations</a>
-    <a href="packages.html">Packages</a>
-    <a href="blog.html">Blog</a>
-    <a href="contact.html">Contact</a>
-    <button id="darkBtn">🌙</button>
+    <a href="index.html"><i class="fas fa-home"></i> Home</a>
+    <a href="destinations.html" class="active"><i class="fas fa-map-marked-alt"></i> Destinations</a>
+    <a href="packages.html"><i class="fas fa-suitcase"></i> Packages</a>
+    <a href="gallery.html"><i class="fas fa-images"></i> Gallery</a>
+    <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+    <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+    <button id="darkBtn"><i class="fas fa-moon"></i></button>
   </nav>
 </header>
 
-<!-- PAGE HEADER -->
-<section class="section" style="margin-top:80px">
-  <h2>Popular Destinations</h2>
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-content">
+      <h1><i class="fas fa-globe-americas"></i> Amazing Destinations</h1>
+      <p>Discover breathtaking places around the world, carefully curated for unforgettable experiences</p>
+      <div class="breadcrumb">
+        <a href="index.html">Home</a> <i class="fas fa-chevron-right"></i> <span>Destinations</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DESTINATION FILTERS -->
+<section class="section">
+  <div class="container">
+    <div class="filter-tabs">
+      <button class="filter-btn active" data-filter="all">
+        <i class="fas fa-globe"></i> All Destinations
+      </button>
+      <button class="filter-btn" data-filter="beach">
+        <i class="fas fa-umbrella-beach"></i> Beaches
+      </button>
+      <button class="filter-btn" data-filter="mountain">
+        <i class="fas fa-mountain"></i> Mountains
+      </button>
+      <button class="filter-btn" data-filter="city">
+        <i class="fas fa-city"></i> Cities
+      </button>
+      <button class="filter-btn" data-filter="adventure">
+        <i class="fas fa-hiking"></i> Adventure
+      </button>
+    </div>
+  </div>
 </section>
 
 <!-- DESTINATION CARDS -->
 <section class="section">
-  <div class="cards">
+  <div class="container">
+    <div class="destinations-grid">
 
-    <div class="card">
-      <img src="images/goa.jpg">
-      <div class="card-info">
-        <a href="destination-goa.html" style="color:white;text-decoration:none">Goa</a>
+      <div class="destination-card" data-category="beach">
+        <div class="destination-image">
+          <img src="images/goa.webp" alt="Goa Beach Paradise" loading="lazy">
+          <div class="destination-badge">
+            <i class="fas fa-star"></i> 4.8
+          </div>
+        </div>
+        <div class="destination-content">
+          <div class="destination-header">
+            <h3>Goa</h3>
+            <div class="destination-price">From $299</div>
+          </div>
+          <p class="destination-description">
+            <i class="fas fa-map-marker-alt"></i> India
+          </p>
+          <p>Experience pristine beaches, vibrant nightlife, and Portuguese colonial architecture in India's premier beach destination.</p>
+          <div class="destination-features">
+            <span class="feature-tag"><i class="fas fa-umbrella-beach"></i> Beaches</span>
+            <span class="feature-tag"><i class="fas fa-cocktail"></i> Nightlife</span>
+            <span class="feature-tag"><i class="fas fa-camera"></i> Photography</span>
+          </div>
+          <div class="destination-actions">
+            <a href="destination-goa.html" class="btn primary">
+              <i class="fas fa-info-circle"></i> Learn More
+            </a>
+            <a href="booking.html?destination=goa" class="btn secondary">
+              <i class="fas fa-calendar-check"></i> Book Now
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="destination-card" data-category="mountain adventure">
+        <div class="destination-image">
+          <img src="images/manali.webp" alt="Manali Mountain Adventure" loading="lazy">
+          <div class="destination-badge">
+            <i class="fas fa-star"></i> 4.9
+          </div>
+        </div>
+        <div class="destination-content">
+          <div class="destination-header">
+            <h3>Manali</h3>
+            <div class="destination-price">From $399</div>
+          </div>
+          <p class="destination-description">
+            <i class="fas fa-map-marker-alt"></i> Himachal Pradesh, India
+          </p>
+          <p>Discover snow-capped peaks, adventure sports, and serene valleys in this Himalayan paradise perfect for thrill-seekers.</p>
+          <div class="destination-features">
+            <span class="feature-tag"><i class="fas fa-mountain"></i> Mountains</span>
+            <span class="feature-tag"><i class="fas fa-skiing"></i> Adventure</span>
+            <span class="feature-tag"><i class="fas fa-snowflake"></i> Snow Sports</span>
+          </div>
+          <div class="destination-actions">
+            <a href="destination-manali.html" class="btn primary">
+              <i class="fas fa-info-circle"></i> Learn More
+            </a>
+            <a href="booking.html?destination=manali" class="btn secondary">
+              <i class="fas fa-calendar-check"></i> Book Now
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="destination-card" data-category="city">
+        <div class="destination-image">
+          <img src="images/jaipur.webp" alt="Jaipur Pink City" loading="lazy">
+          <div class="destination-badge">
+            <i class="fas fa-star"></i> 4.7
+          </div>
+        </div>
+        <div class="destination-content">
+          <div class="destination-header">
+            <h3>Jaipur</h3>
+            <div class="destination-price">From $249</div>
+          </div>
+          <p class="destination-description">
+            <i class="fas fa-map-marker-alt"></i> Rajasthan, India
+          </p>
+          <p>Explore the Pink City's magnificent palaces, vibrant markets, and rich Rajasthani culture in India's royal heritage destination.</p>
+          <div class="destination-features">
+            <span class="feature-tag"><i class="fas fa-crown"></i> Heritage</span>
+            <span class="feature-tag"><i class="fas fa-shopping-bag"></i> Shopping</span>
+            <span class="feature-tag"><i class="fas fa-utensils"></i> Cuisine</span>
+          </div>
+          <div class="destination-actions">
+            <a href="destination-jaipur.html" class="btn primary">
+              <i class="fas fa-info-circle"></i> Learn More
+            </a>
+            <a href="booking.html?destination=jaipur" class="btn secondary">
+              <i class="fas fa-calendar-check"></i> Book Now
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="destination-card" data-category="city">
+        <div class="destination-image">
+          <img src="images/paris.jpg" alt="Paris City of Love" loading="lazy">
+          <div class="destination-badge">
+            <i class="fas fa-star"></i> 4.8
+          </div>
+        </div>
+        <div class="destination-content">
+          <div class="destination-header">
+            <h3>Paris</h3>
+            <div class="destination-price">From $799</div>
+          </div>
+          <p class="destination-description">
+            <i class="fas fa-map-marker-alt"></i> France
+          </p>
+          <p>Experience romance, art, and culture in the City of Light with iconic landmarks, world-class museums, and exquisite cuisine.</p>
+          <div class="destination-features">
+            <span class="feature-tag"><i class="fas fa-heart"></i> Romance</span>
+            <span class="feature-tag"><i class="fas fa-palette"></i> Art & Culture</span>
+            <span class="feature-tag"><i class="fas fa-wine-glass"></i> Fine Dining</span>
+          </div>
+          <div class="destination-actions">
+            <a href="#" class="btn primary">
+              <i class="fas fa-info-circle"></i> Learn More
+            </a>
+            <a href="booking.html?destination=paris" class="btn secondary">
+              <i class="fas fa-calendar-check"></i> Book Now
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="destination-card" data-category="beach">
+        <div class="destination-image">
+          <img src="images/bali.jpg" alt="Bali Tropical Paradise" loading="lazy">
+          <div class="destination-badge">
+            <i class="fas fa-star"></i> 4.9
+          </div>
+        </div>
+        <div class="destination-content">
+          <div class="destination-header">
+            <h3>Bali</h3>
+            <div class="destination-price">From $599</div>
+          </div>
+          <p class="destination-description">
+            <i class="fas fa-map-marker-alt"></i> Indonesia
+          </p>
+          <p>Immerse yourself in tropical paradise with stunning beaches, ancient temples, lush rice terraces, and vibrant Balinese culture.</p>
+          <div class="destination-features">
+            <span class="feature-tag"><i class="fas fa-umbrella-beach"></i> Beaches</span>
+            <span class="feature-tag"><i class="fas fa-om"></i> Spirituality</span>
+            <span class="feature-tag"><i class="fas fa-spa"></i> Wellness</span>
+          </div>
+          <div class="destination-actions">
+            <a href="#" class="btn primary">
+              <i class="fas fa-info-circle"></i> Learn More
+            </a>
+            <a href="booking.html?destination=bali" class="btn secondary">
+              <i class="fas fa-calendar-check"></i> Book Now
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA SECTION -->
+<section class="section cta-section">
+  <div class="container">
+    <div class="cta-content">
+      <h2>Can't Find Your Dream Destination?</h2>
+      <p>Our travel experts can create custom itineraries for any destination worldwide</p>
+      <div class="cta-buttons">
+        <a href="contact.html" class="btn primary large">
+          <i class="fas fa-phone"></i> Contact Our Experts
+        </a>
+        <a href="packages.html" class="btn secondary large">
+          <i class="fas fa-gift"></i> View All Packages
+        </a>
       </div>
     </div>
-
-    <div class="card">
-      <img src="images/manali.jpg">
-      <div class="card-info">
-        <a href="destination-manali.html" style="color:white;text-decoration:none">Manali</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="images/jaipur.webp">
-      <div class="card-info">
-        <a href="destination-jaipur.html" style="color:white;text-decoration:none">Jaipur</a>
-      </div>
-    </div>
-
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <p>© 2026 ExploreEase</p>
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3><i class="fas fa-plane"></i> ExploreEase</h3>
+        <p>Your trusted partner for premium travel experiences worldwide. Creating unforgettable journeys since 2009.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="destinations.html">Destinations</a></li>
+          <li><a href="packages.html">Packages</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="terms.html">Terms & Conditions</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="#">24/7 Support</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h4>Contact Info</h4>
+        <div class="contact-info">
+          <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+          <p><i class="fas fa-envelope"></i> info@exploreease.com</p>
+          <p><i class="fas fa-map-marker-alt"></i> 123 Travel Street, Adventure City</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2026 ExploreEase. All rights reserved. | Designed with ❤️ for travelers</p>
+    </div>
+  </div>
 </footer>
 
-<!-- CORRECT JS PATH -->
+<!-- JS -->
 <script src="js/script.js"></script>
 </body>
 </html>

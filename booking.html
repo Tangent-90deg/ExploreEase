@@ -1,25 +1,300 @@
 <!DOCTYPE html>
-<html>
-<head><title>Booking</title><link rel="stylesheet" href="css/style.css"></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Your Trip - ExploreEase</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Book your dream vacation with ExploreEase. Easy online booking with secure payment and instant confirmation.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✈️</text></svg>">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
 <body>
-<header>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <h2 class="logo">
+    <i class="fas fa-plane"></i>
+    ExploreEase
+  </h2>
+
+  <input type="checkbox" id="menu-toggle">
+  <label for="menu-toggle" class="menu-icon">
+    <i class="fas fa-bars"></i>
+  </label>
+
   <nav>
-    <a href="index.html">Home</a>
-    <a href="destinations.html">Destinations</a>
-    <a href="packages.html">Packages</a>
-    <a href="blog.html">Blog</a>
-    <a href="performance.html">Performance</a>
-    <a href="contact.html">Contact</a>
+    <a href="index.html"><i class="fas fa-home"></i> Home</a>
+    <a href="destinations.html"><i class="fas fa-map-marked-alt"></i> Destinations</a>
+    <a href="packages.html"><i class="fas fa-suitcase"></i> Packages</a>
+    <a href="gallery.html"><i class="fas fa-images"></i> Gallery</a>
+    <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+    <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+    <button id="darkBtn"><i class="fas fa-moon"></i></button>
   </nav>
 </header>
-<main>
-<h1>Book Your Trip</h1>
-<form>
-<input placeholder="Name"><br>
-<input placeholder="Email"><br>
-<button>Submit</button>
-</form>
-</main>
-<footer>© ExploreEase</footer>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-content">
+      <h1><i class="fas fa-calendar-check"></i> Book Your Adventure</h1>
+      <p>Secure your dream vacation with our easy booking process</p>
+      <div class="breadcrumb">
+        <a href="index.html">Home</a> <i class="fas fa-chevron-right"></i> <span>Booking</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING FORM -->
+<section class="section">
+  <div class="container">
+    <div class="booking-container">
+      
+      <!-- Booking Form -->
+      <div class="booking-form-section">
+        <h2><i class="fas fa-edit"></i> Trip Details</h2>
+        
+        <form class="booking-form" id="bookingForm">
+          <div class="form-group">
+            <label for="destination">
+              <i class="fas fa-map-marker-alt"></i> Destination
+            </label>
+            <select id="destination" name="destination" required>
+              <option value="">Select Destination</option>
+              <option value="goa">Goa - Beach Paradise</option>
+              <option value="manali">Manali - Mountain Adventure</option>
+              <option value="jaipur">Jaipur - Pink City</option>
+              <option value="paris">Paris - City of Love</option>
+              <option value="bali">Bali - Tropical Paradise</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="checkin">
+                <i class="fas fa-calendar"></i> Check-in Date
+              </label>
+              <input type="date" id="checkin" name="checkin" required>
+            </div>
+            <div class="form-group">
+              <label for="checkout">
+                <i class="fas fa-calendar"></i> Check-out Date
+              </label>
+              <input type="date" id="checkout" name="checkout" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="adults">
+                <i class="fas fa-user"></i> Adults
+              </label>
+              <select id="adults" name="adults" required>
+                <option value="1">1 Adult</option>
+                <option value="2">2 Adults</option>
+                <option value="3">3 Adults</option>
+                <option value="4">4 Adults</option>
+                <option value="5">5+ Adults</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="children">
+                <i class="fas fa-child"></i> Children
+              </label>
+              <select id="children" name="children">
+                <option value="0">No Children</option>
+                <option value="1">1 Child</option>
+                <option value="2">2 Children</option>
+                <option value="3">3 Children</option>
+                <option value="4">4+ Children</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="package">
+              <i class="fas fa-gift"></i> Package Type
+            </label>
+            <select id="package" name="package" required>
+              <option value="">Select Package</option>
+              <option value="budget">Budget Package - Basic accommodations</option>
+              <option value="standard">Standard Package - Mid-range hotels</option>
+              <option value="luxury">Luxury Package - Premium resorts</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="fullname">
+              <i class="fas fa-user"></i> Full Name
+            </label>
+            <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">
+                <i class="fas fa-envelope"></i> Email Address
+              </label>
+              <input type="email" id="email" name="email" placeholder="your@email.com" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">
+                <i class="fas fa-phone"></i> Phone Number
+              </label>
+              <input type="tel" id="phone" name="phone" placeholder="+1 (555) 123-4567" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="special-requests">
+              <i class="fas fa-comment"></i> Special Requests (Optional)
+            </label>
+            <textarea id="special-requests" name="special-requests" rows="4" placeholder="Any special requirements or requests..."></textarea>
+          </div>
+
+          <div class="form-group checkbox-group">
+            <label class="checkbox-label">
+              <input type="checkbox" id="newsletter" name="newsletter">
+              <span class="checkmark"></span>
+              Subscribe to our newsletter for travel deals and updates
+            </label>
+          </div>
+
+          <div class="form-group checkbox-group">
+            <label class="checkbox-label">
+              <input type="checkbox" id="terms" name="terms" required>
+              <span class="checkmark"></span>
+              I agree to the <a href="terms.html" target="_blank">Terms & Conditions</a> and <a href="privacy.html" target="_blank">Privacy Policy</a>
+            </label>
+          </div>
+
+          <button type="submit" class="btn primary large booking-btn">
+            <i class="fas fa-credit-card"></i> Proceed to Payment
+          </button>
+        </form>
+      </div>
+
+      <!-- Booking Summary -->
+      <div class="booking-summary">
+        <h3><i class="fas fa-receipt"></i> Booking Summary</h3>
+        
+        <div class="summary-item">
+          <span>Destination:</span>
+          <span id="summary-destination">Not selected</span>
+        </div>
+        
+        <div class="summary-item">
+          <span>Dates:</span>
+          <span id="summary-dates">Not selected</span>
+        </div>
+        
+        <div class="summary-item">
+          <span>Guests:</span>
+          <span id="summary-guests">1 Adult</span>
+        </div>
+        
+        <div class="summary-item">
+          <span>Package:</span>
+          <span id="summary-package">Not selected</span>
+        </div>
+        
+        <div class="summary-divider"></div>
+        
+        <div class="summary-item total">
+          <span>Estimated Total:</span>
+          <span id="summary-total">$0</span>
+        </div>
+        
+        <div class="summary-note">
+          <i class="fas fa-info-circle"></i>
+          Final price will be confirmed after reviewing your requirements
+        </div>
+
+        <div class="trust-badges">
+          <div class="trust-badge">
+            <i class="fas fa-shield-alt"></i>
+            <span>Secure Booking</span>
+          </div>
+          <div class="trust-badge">
+            <i class="fas fa-undo"></i>
+            <span>Free Cancellation</span>
+          </div>
+          <div class="trust-badge">
+            <i class="fas fa-headset"></i>
+            <span>24/7 Support</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3><i class="fas fa-plane"></i> ExploreEase</h3>
+        <p>Your trusted partner for premium travel experiences worldwide. Creating unforgettable journeys since 2009.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="destinations.html">Destinations</a></li>
+          <li><a href="packages.html">Packages</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="terms.html">Terms & Conditions</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="#">24/7 Support</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h4>Contact Info</h4>
+        <div class="contact-info">
+          <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+          <p><i class="fas fa-envelope"></i> info@exploreease.com</p>
+          <p><i class="fas fa-map-marker-alt"></i> 123 Travel Street, Adventure City</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2026 ExploreEase. All rights reserved. | Designed with ❤️ for travelers</p>
+    </div>
+  </div>
+</footer>
+
+<!-- JS -->
+<script src="js/script.js"></script>
 </body>
 </html>
