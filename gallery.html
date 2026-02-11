@@ -1,31 +1,235 @@
 <!DOCTYPE html>
-<html>
-<head><title>Gallery</title><link rel="stylesheet" href="css/style.css"></head>
-<body>
-<header>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="destinations.html">Destinations</a>
-    <a href="packages.html">Packages</a>
-    <a href="blog.html">Blog</a>
-    <a href="performance.html">Performance</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel Gallery | ExploreEase</title>
+  
+  <meta name="description" content="Explore stunning travel photography from destinations around the world">
+  
+  <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✈️</text></svg>">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
   <!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-0WT5WFF0K4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-0WT5WFF0K4');
-</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0WT5WFF0K4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-0WT5WFF0K4');
+  </script>
+</head>
+<body>
 
+<header class="navbar">
+  <h2 class="logo">
+    <i class="fas fa-plane"></i>
+    ExploreEase
+  </h2>
+
+  <input type="checkbox" id="menu-toggle">
+  <label for="menu-toggle" class="menu-icon">
+    <i class="fas fa-bars"></i>
+  </label>
+
+  <nav>
+    <a href="index.html"><i class="fas fa-home"></i> Home</a>
+    <a href="destinations.html"><i class="fas fa-map-marked-alt"></i> Destinations</a>
+    <a href="packages.html"><i class="fas fa-suitcase"></i> Packages</a>
+    <a href="gallery.html"><i class="fas fa-images"></i> Gallery</a>
+    <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+    <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+    <button id="darkBtn"><i class="fas fa-moon"></i></button>
+  </nav>
 </header>
-<main>
-<h1>Gallery</h1>
-<img src="images/gallery1.webp" loading="lazy">
-<img src="images/gallery2.webp" loading="lazy">
-</main>
-<footer>© ExploreEase</footer>
+
+<section class="section" style="margin-top: 100px; padding-top: 60px;">
+  <div class="container">
+    <h2>Travel Gallery</h2>
+    <p class="section-subtitle">Stunning moments captured from our travelers' incredible journeys around the world</p>
+
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Mountain Lake Sunset" onclick="openImg(this.src)" loading="lazy">
+        <div class="gallery-overlay">
+          <div class="gallery-info">
+            <h3>Mountain Lake</h3>
+            <p><i class="fas fa-map-marker-alt"></i> Switzerland</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Tropical Beach Paradise" onclick="openImg(this.src)" loading="lazy">
+        <div class="gallery-overlay">
+          <div class="gallery-info">
+            <h3>Beach Paradise</h3>
+            <p><i class="fas fa-map-marker-alt"></i> Maldives</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Ocean Waves" onclick="openImg(this.src)" loading="lazy">
+        <div class="gallery-overlay">
+          <div class="gallery-info">
+            <h3>Ocean Waves</h3>
+            <p><i class="fas fa-map-marker-alt"></i> Hawaii</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Mountain Adventure" onclick="openImg(this.src)" loading="lazy">
+        <div class="gallery-overlay">
+          <div class="gallery-info">
+            <h3>Mountain Peak</h3>
+            <p><i class="fas fa-map-marker-alt"></i> Himalayas</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1502602898536-47ad22581b52?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Paris Eiffel Tower" onclick="openImg(this.src)" loading="lazy">
+        <div class="gallery-overlay">
+          <div class="gallery-info">
+            <h3>Eiffel Tower</h3>
+            <p><i class="fas fa-map-marker-alt"></i> Paris, France</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1537953773345-d172ccf13cf1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Bali Temple" onclick="openImg(this.src)" loading="lazy">
+        <div class="gallery-overlay">
+          <div class="gallery-info">
+            <h3>Sacred Temple</h3>
+            <p><i class="fas fa-map-marker-alt"></i> Bali, Indonesia</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Goa Beach" onclick="openImg(this.src)" loading="lazy">
+        <div class="gallery-overlay">
+          <div class="gallery-info">
+            <h3>Sunset Beach</h3>
+            <p><i class="fas fa-map-marker-alt"></i> Goa, India</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1464822759844-d150baec0494?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Mountain Landscape" onclick="openImg(this.src)" loading="lazy">
+        <div class="gallery-overlay">
+          <div class="gallery-info">
+            <h3>Alpine Vista</h3>
+            <p><i class="fas fa-map-marker-alt"></i> Alps</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Desert Landscape" onclick="openImg(this.src)" loading="lazy">
+        <div class="gallery-overlay">
+          <div class="gallery-info">
+            <h3>Desert Dunes</h3>
+            <p><i class="fas fa-map-marker-alt"></i> Dubai, UAE</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1431274172761-fca41d930114?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="City Lights" onclick="openImg(this.src)" loading="lazy">
+        <div class="gallery-overlay">
+          <div class="gallery-info">
+            <h3>City Lights</h3>
+            <p><i class="fas fa-map-marker-alt"></i> New York, USA</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Tropical Island" onclick="openImg(this.src)" loading="lazy">
+        <div class="gallery-overlay">
+          <div class="gallery-info">
+            <h3>Island Paradise</h3>
+            <p><i class="fas fa-map-marker-alt"></i> Bali, Indonesia</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Beach Sunset" onclick="openImg(this.src)" loading="lazy">
+        <div class="gallery-overlay">
+          <div class="gallery-info">
+            <h3>Golden Hour</h3>
+            <p><i class="fas fa-map-marker-alt"></i> Goa, India</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" onclick="closeLightbox()">
+  <span class="close-lightbox">&times;</span>
+  <img id="lightbox-img" alt="Gallery Image">
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3><i class="fas fa-plane"></i> ExploreEase</h3>
+        <p>Your trusted partner for premium travel experiences worldwide. Creating unforgettable journeys since 2009.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="destinations.html">Destinations</a></li>
+          <li><a href="packages.html">Packages</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="terms.html">Terms & Conditions</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="#">24/7 Support</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h4>Contact Info</h4>
+        <div class="contact-info">
+          <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+          <p><i class="fas fa-envelope"></i> info@exploreease.com</p>
+          <p><i class="fas fa-map-marker-alt"></i> 123 Travel Street, Adventure City</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2026 ExploreEase. All rights reserved. | Designed with ❤️ for travelers</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
 </body>
 </html>

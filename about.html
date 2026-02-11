@@ -1,33 +1,247 @@
 <!DOCTYPE html>
-<html>
-<head><title>About</title>
-<link rel="stylesheet" href="css/style.css">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | ExploreEase</title>
+  
+  <meta name="description" content="Learn about ExploreEase - Your trusted travel partner since 2009, creating unforgettable journeys worldwide">
+  
+  <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✈️</text></svg>">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0WT5WFF0K4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-0WT5WFF0K4');
+  </script>
 </head>
 <body>
-<header>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="destinations.html">Destinations</a>
-    <a href="packages.html">Packages</a>
-    <a href="blog.html">Blog</a>
-    <a href="performance.html">Performance</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-  <!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-0WT5WFF0K4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-0WT5WFF0K4');
-</script>
 
+<header class="navbar">
+  <h2 class="logo">
+    <i class="fas fa-plane"></i>
+    ExploreEase
+  </h2>
+
+  <input type="checkbox" id="menu-toggle">
+  <label for="menu-toggle" class="menu-icon">
+    <i class="fas fa-bars"></i>
+  </label>
+
+  <nav>
+    <a href="index.html"><i class="fas fa-home"></i> Home</a>
+    <a href="destinations.html"><i class="fas fa-map-marked-alt"></i> Destinations</a>
+    <a href="packages.html"><i class="fas fa-suitcase"></i> Packages</a>
+    <a href="gallery.html"><i class="fas fa-images"></i> Gallery</a>
+    <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+    <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+    <button id="darkBtn"><i class="fas fa-moon"></i></button>
+  </nav>
 </header>
 
-<main>
-<h1>About ExploreEase</h1>
-<p>ExploreEase is a multi-page travel website designed to study web performance optimization.</p>
-</main>
-<footer>© ExploreEase</footer>
+<!-- ABOUT HERO -->
+<section class="about-hero">
+  <div class="container">
+    <h1>About ExploreEase</h1>
+    <p>Creating unforgettable travel experiences since 2009</p>
+  </div>
+</section>
+
+<!-- OUR STORY -->
+<section class="section">
+  <div class="container">
+    <div class="about-content">
+      <div class="about-text">
+        <h2>Our Story</h2>
+        <p>Founded in 2009, ExploreEase began with a simple mission: to make world-class travel experiences accessible to everyone. What started as a small team of passionate travelers has grown into a leading travel agency serving over 50,000 happy customers worldwide.</p>
+        <p>We believe that travel is more than just visiting new places—it's about creating memories, experiencing different cultures, and discovering yourself along the way. Every journey we curate is designed with care, attention to detail, and a deep understanding of what makes travel truly special.</p>
+        <p>Our team of expert travel consultants has personally visited every destination we offer, ensuring that we can provide authentic recommendations and insider tips that you won't find in guidebooks.</p>
+      </div>
+      <div class="about-image">
+        <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Travel Team" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="section alt">
+  <div class="container">
+    <h2>Our Values</h2>
+    <p class="section-subtitle">The principles that guide everything we do</p>
+    
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-icon">
+          <i class="fas fa-heart"></i>
+        </div>
+        <h3>Passion for Travel</h3>
+        <p>We're travelers first, and that passion drives us to create exceptional experiences for our clients.</p>
+      </div>
+      
+      <div class="value-card">
+        <div class="value-icon">
+          <i class="fas fa-shield-alt"></i>
+        </div>
+        <h3>Trust & Safety</h3>
+        <p>Your safety and peace of mind are our top priorities. We partner only with trusted providers worldwide.</p>
+      </div>
+      
+      <div class="value-card">
+        <div class="value-icon">
+          <i class="fas fa-star"></i>
+        </div>
+        <h3>Excellence</h3>
+        <p>We're committed to delivering outstanding service and exceeding expectations at every touchpoint.</p>
+      </div>
+      
+      <div class="value-card">
+        <div class="value-icon">
+          <i class="fas fa-leaf"></i>
+        </div>
+        <h3>Sustainability</h3>
+        <p>We promote responsible tourism that respects local communities and protects our planet.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="section">
+  <div class="container">
+    <h2>Meet Our Team</h2>
+    <p class="section-subtitle">The passionate people behind your perfect journey</p>
+    
+    <div class="team-grid">
+      <div class="team-member">
+        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Team Member" loading="lazy">
+        <h3>John Anderson</h3>
+        <p class="role">Founder & CEO</p>
+        <p class="bio">20+ years of travel industry experience</p>
+      </div>
+      
+      <div class="team-member">
+        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Team Member" loading="lazy">
+        <h3>Sarah Mitchell</h3>
+        <p class="role">Head of Operations</p>
+        <p class="bio">Expert in luxury travel experiences</p>
+      </div>
+      
+      <div class="team-member">
+        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Team Member" loading="lazy">
+        <h3>David Chen</h3>
+        <p class="role">Travel Consultant</p>
+        <p class="bio">Specialist in Asian destinations</p>
+      </div>
+      
+      <div class="team-member">
+        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Team Member" loading="lazy">
+        <h3>Emma Rodriguez</h3>
+        <p class="role">Customer Success</p>
+        <p class="bio">Dedicated to your satisfaction</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="section stats-section">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-number">50K+</div>
+        <div class="stat-label">Happy Travelers</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">200+</div>
+        <div class="stat-label">Destinations</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">15+</div>
+        <div class="stat-label">Years Experience</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">98%</div>
+        <div class="stat-label">Satisfaction Rate</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section">
+  <div class="container">
+    <div class="cta-content">
+      <h2>Ready to Start Your Journey?</h2>
+      <p>Let our experts help you plan the perfect trip</p>
+      <div class="cta-buttons">
+        <a href="contact.html" class="btn primary large">
+          <i class="fas fa-envelope"></i> Contact Us
+        </a>
+        <a href="packages.html" class="btn secondary large">
+          <i class="fas fa-suitcase"></i> View Packages
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3><i class="fas fa-plane"></i> ExploreEase</h3>
+        <p>Your trusted partner for premium travel experiences worldwide. Creating unforgettable journeys since 2009.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="destinations.html">Destinations</a></li>
+          <li><a href="packages.html">Packages</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="terms.html">Terms & Conditions</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="#">24/7 Support</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h4>Contact Info</h4>
+        <div class="contact-info">
+          <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+          <p><i class="fas fa-envelope"></i> info@exploreease.com</p>
+          <p><i class="fas fa-map-marker-alt"></i> 123 Travel Street, Adventure City</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2026 ExploreEase. All rights reserved. | Designed with ❤️ for travelers</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
 </body>
 </html>
