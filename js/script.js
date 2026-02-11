@@ -514,3 +514,116 @@ document.addEventListener('DOMContentLoaded', function() {
   // Initialize summary on page load
   updateSummary();
 });
+// ===== IMAGE LOADING & ERROR HANDLING ===== //
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Handle image loading states
+  const images = document.querySelectorAll('img[loading="lazy"]');
+  
+  images.forEach(img => {
+    // Show loading state
+    img.style.opacity = '0';
+    
+    // Handle successful load
+    img.addEventListener('load', function() {
+      this.style.opacity = '1';
+      this.classList.add('loaded', 'fade-in');
+    });
+    
+    // Handle load errors with fallback
+    img.addEventListener('error', function() {
+      console.warn('Failed to load image:', this.src);
+      
+      // Try to use a fallback image or show placeholder
+      if (!this.dataset.fallbackAttempted) {
+        this.dataset.fallbackAttempted = 'true';
+        
+        // Set a fallback based on the image type
+        const altText = this.alt.toLowerCase();
+        let fallbackUrl = '';
+        
+        if (altText.includes('goa') || altText.includes('beach')) {
+          fallbackUrl = 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80';
+        } else if (altText.includes('manali') || altText.includes('mountain')) {
+          fallbackUrl = 'https://images.unsplash.com/photo-1464822759844-d150baec0494?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80';
+        } else if (altText.includes('paris') || altText.includes('city')) {
+          fallbackUrl = 'https://images.unsplash.com/photo-1431274172761-fca41d930114?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80';
+        } else if (altText.includes('bali') || altText.includes('tropical')) {
+          fallbackUrl = 'https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80';
+        } else if (altText.includes('travel') || altText.includes('memory')) {
+          fallbackUrl = 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80';
+        } else {
+          // Generic travel fallback
+          fallbackUrl = 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80';
+        }
+        
+        this.src = fallbackUrl;
+      } else {
+        // If fallback also fails, show a placeholder
+        this.style.opacity = '1';
+        this.style.background = 'linear-gradient(135deg, #e5e7eb, #d1d5db)';
+        this.style.display = 'flex';
+        this.style.alignItems = 'center';
+        this.style.justifyContent = 'center';
+        this.style.color = '#6b7280';
+        this.style.fontSize = '2rem';
+        this.innerHTML = '<i class="fas fa-image" style="font-size: 3rem; opacity: 0.5;"></i>';
+      }
+    });
+  });
+  
+  // Handle non-lazy images
+  const regularImages = document.querySelectorAll('img:not([loading="lazy"])');
+  regularImages.forEach(img => {
+    if (!img.complete) {
+      img.addEventListener('load', function() {
+        this.classList.add('fade-in');
+      });
+    } else {
+      img.classList.add('fade-in');
+    }
+  });
+});
+
+// Preload critical images
+function preloadCriticalImages() {
+  const criticalImages = [
+    'https://images.unsplash.com/photo-1488646953014-85cb44e25828?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2835&q=80',
+    'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80',
+    'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80'
+  ];
+  
+  criticalImages.forEach(src => {
+    const img = new Image();
+    img.src = src;
+  });
+}
+
+// Start preloading after page load
+window.addEventListener('load', preloadCriticalImages);
+
+// Intersection Observer for better lazy loading
+if ('IntersectionObserver' in window) {
+  const imageObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const img = entry.target;
+        if (img.dataset.src) {
+          img.src = img.dataset.src;
+          img.removeAttribute('data-src');
+        }
+        img.classList.remove('lazy');
+        imageObserver.unobserve(img);
+      }
+    });
+  }, {
+    rootMargin: '50px 0px',
+    threshold: 0.01
+  });
+
+  // Observe all lazy images
+  document.addEventListener('DOMContentLoaded', function() {
+    const lazyImages = document.querySelectorAll('img[data-src]');
+    lazyImages.forEach(img => imageObserver.observe(img));
+  });
+}

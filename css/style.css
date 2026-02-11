@@ -147,7 +147,7 @@ nav a:hover::after {
 .hero {
   height: 100vh;
   background: linear-gradient(135deg, rgba(37, 99, 235, 0.8), rgba(245, 158, 11, 0.6)), 
-              url("../images/hero.jpeg") center/cover no-repeat;
+              url("https://images.unsplash.com/photo-1488646953014-85cb44e25828?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2835&q=80") center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1464,5 +1464,104 @@ nav a.active::after {
   
   .booking-summary {
     padding: 1rem;
+  }
+}
+/* ===== IMAGE OPTIMIZATION & FALLBACKS ===== */
+
+/* Image loading states */
+img {
+  transition: opacity 0.3s ease;
+}
+
+img[loading="lazy"] {
+  opacity: 0;
+}
+
+img[loading="lazy"].loaded,
+img:not([loading="lazy"]) {
+  opacity: 1;
+}
+
+/* Image error handling */
+img {
+  background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+  background-size: cover;
+  background-position: center;
+}
+
+/* Fallback for broken images */
+img::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, var(--bg-light), #e5e7eb);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: var(--text-light);
+}
+
+img::after {
+  content: '🖼️ Image Loading...';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--text-light);
+  font-size: 0.9rem;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* Hide fallback text when image loads */
+img:not([src=""]):not([src*="data:"]) {
+  color: transparent;
+}
+
+img:not([src=""]):not([src*="data:"])::after {
+  display: none;
+}
+
+/* Ensure images maintain aspect ratio */
+.card img,
+.destination-image img,
+.gallery img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+/* Loading animation for images */
+@keyframes imageLoad {
+  from {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+img.fade-in {
+  animation: imageLoad 0.5s ease-out;
+}
+
+/* Responsive image optimization */
+@media (max-width: 768px) {
+  .hero {
+    background-attachment: scroll; /* Better performance on mobile */
+  }
+}
+
+/* High DPI display optimization */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .hero {
+    background-image: linear-gradient(135deg, rgba(37, 99, 235, 0.8), rgba(245, 158, 11, 0.6)), 
+                      url("https://images.unsplash.com/photo-1488646953014-85cb44e25828?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2835&q=80&dpr=2");
   }
 }
